@@ -29,7 +29,7 @@ jobs:
       run: |
         python /home/runner/work/Containerisation-React-Django-App/Containerisation-React-Django-App/Computex/manage.py test
   
-  login_to_dockerhub:
+  login_to_dockerhub_and_push:
 
     name: setup-and-login-docker
     runs-on: ubuntu-latest
@@ -49,16 +49,6 @@ jobs:
         with:
           images: 281188/pythonspace
 
-
-  push_dockerhub:
-    
-    name: Push Docker image to Docker Hub
-    runs-on: ubuntu-latest
-    steps:
-    
-      - name: Check out the repo
-        uses: actions/checkout@v4
-      
       - name: Build and push Docker image
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
