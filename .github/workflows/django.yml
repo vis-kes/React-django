@@ -52,8 +52,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
         with:
-          context: /home/runner/work/Containerisation-React-Django-App/Containerisation-React-Django-App/Computex
-          file: ./Dockerfile
+          context: ./home/runner/work/Containerisation-React-Django-App/Containerisation-React-Django-App/Computex
+          file: ./home/runner/work/Containerisation-React-Django-App/Containerisation-React-Django-App/Computex/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
