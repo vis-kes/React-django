@@ -11,6 +11,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.x
+      - name: grant permission 
+        run: chmod +x /home/runner/work/Containerisation-React-Django-App/Containerisation-React-Django-App/ComputexFrontend/package.json
       - name: Install Dependencies
         run:  /home/runner/work/Containerisation-React-Django-App/Containerisation-React-Django-App/ComputexFrontend/package.json npm install
       - name: Build Project
