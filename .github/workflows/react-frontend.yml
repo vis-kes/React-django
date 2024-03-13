@@ -14,9 +14,9 @@ jobs:
       - name: grant permission 
         run: chmod +x /home/runner/work/Containerisation-React-Django-App/Containerisation-React-Django-App/ComputexFrontend/package.json
       - name: Install Dependencies
-        run:  ./ComputexFrontend/package.json npm install
+        run:  ./ComputexFrontend npm install
       - name: Build Project
-        run:  ./ComputexFrontend/ npm run build
+        run:  ./ComputexFrontend npm run build
       - name: Upload artifact to enable deployment
         uses: actions/upload-artifact@v3
         with:
