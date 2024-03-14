@@ -57,5 +57,5 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
-            sudo cp -r /ComputexFrontend/dist/react-app/* /var/www/html
+            sudo cp -r ComputexFrontend/dist/react-app/* /var/www/html
             sudo systemctl restart nginx
