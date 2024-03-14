@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /code/
 
 # Set executable permissions for the script
-RUN chmod +x rundjango.sh
+RUN chmod +x /code/rundjango.sh
 
 # Expose port 8000 to the outside world
 EXPOSE 8000
