@@ -31,6 +31,9 @@ jobs:
     # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
+      - name: goto working directory
+        run:  |
+          cd ComputexFrontend
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
