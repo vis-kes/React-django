@@ -23,4 +23,4 @@ COPY . /code/
 EXPOSE 8000
 
 # Run the application
-CMDCMD ["/code/rundjango.sh"]
+CMD ["/code/rundjango.sh"]
