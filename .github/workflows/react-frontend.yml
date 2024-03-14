@@ -42,7 +42,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.PRIVATE_KEY }} 
-          source: "./ComputexFrontend/dist/react-app"
+          source: "/ComputexFrontend/dist/react-app"
           target: "/home/ubuntu"
 
       - name: Copy code to /var/www/html
