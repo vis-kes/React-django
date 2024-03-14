@@ -23,7 +23,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: react-app
-          path: build
+          path: ./ComputexFrontend/dist
   # Deploy Job
   deploy:
     # Add a dependency to the build job
@@ -40,14 +40,14 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: react-app
-          path: build
+          path: ./ComputexFrontend/dist
       - name: Copy files to server  
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.PRIVATE_KEY }} 
-          source: "build"
+          source: "./ComputexFrontend/dist"
           target: "/home/ubuntu"
 
       - name: Copy code to /var/www/html
