@@ -72,7 +72,7 @@ jobs:
         key: ${{ secrets.AZUREPRIVATE_KEY }}
         script: |
           cd /home/innocentken/Containerisation-React-Django-App
-          git pull origin
+          sudo git pull origin
           docker-compose pull
           docker-compose up --force-recreate
 
