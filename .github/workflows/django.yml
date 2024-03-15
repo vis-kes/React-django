@@ -29,11 +29,12 @@ jobs:
       run: |
         python /home/runner/work/Containerisation-React-Django-App/Containerisation-React-Django-App/Computex/manage.py test
   
-  login_to_dockerhub_and_push:
+  Publish_to_dockerhub:
     # Add a dependency to the build job
-    needs: build
+    
     name: setup-and-login-docker
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -59,5 +60,20 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: Publish_to_dockerhub
+    steps:
+    - name: Deploy to Ec2 Instance
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.AZUREHOST }}
+        username: ${{ secrets.AZUREUSER }}
+        key: ${{ secrets.AZUREPRIVATE_KEY }}
+        script: |
+          cd Containerisation-React-Django-App
+          git pull origin
+          docker-compose pull
+          docker-compose up --force-recreate
 
 
