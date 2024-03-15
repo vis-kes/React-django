@@ -71,7 +71,6 @@ jobs:
         username: ${{ secrets.AZUREUSER }}
         key: ${{ secrets.AZUREPRIVATE_KEY }}
         script: |
-          git config --global --add safe.directory /home/innocentken/Containerisation-React-Django-App
           cd /home/innocentken/Containerisation-React-Django-App
           git pull origin
           docker-compose pull
