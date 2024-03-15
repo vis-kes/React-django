@@ -1,7 +1,7 @@
 // auth.ts
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "http://20.26.112.27:8000";
 
 export const login = async (username: string, password: string) => {
   try {
